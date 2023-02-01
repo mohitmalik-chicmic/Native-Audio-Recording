@@ -1,0 +1,10 @@
+{
+  "name": "NewProject",
+  "uuid": "eef21e2f-6861-4f88-bb0a-0d2436306847",
+  "creator": {
+    "version": "3.7.0"
+  },
+  "dependencies": {
+    "audio-to-text": "^1.0.1"
+  }
+}

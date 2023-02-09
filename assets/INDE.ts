@@ -8,17 +8,24 @@ export class INDE extends Component {
     startLabel: Label = null;
     @property({ type: Label })
     stopLabel: Label = null;
+    @property({ type: Label })
+    deleteLabel: Label = null;
     @property({ type: Sprite })
     btnSprite: Sprite = null;
     start() {
 
+    }
+    deleteRecording(){
+        console.log("clikced");
+        this.deleteLabel.string = "Recording Deleted"
+        native.reflection.callStaticMethod("com/cocos/game/AppActivity", "deleteRecording", "(Ljava/lang/String;)V", "delete");
     }
     startRecording = () => {
         console.log("clikced");
         this.startLabel.string = "Recording started"
         native.reflection.callStaticMethod("com/cocos/game/AppActivity", "startRecording", "(Ljava/lang/String;)V", "start");
     }
-    stopRecording = () => {
+    stopRecording = ()=>{
         console.log("clikced");
         let clip = this.node.getComponent(AudioSource).clip;
         console.log(clip);
